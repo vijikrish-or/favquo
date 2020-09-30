@@ -6,7 +6,7 @@ app=Flask(__name__)
 #following line is to connect to local database
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:Postg#123@localhost/quotedb'
 #following line is to connect to heroku's postgres database - copied from var settings on heroku
-app.config['SQLALCHEMY_DATABASE_URL']='postgres://vsaykqnctpdole:5deaa00920aa7874264c87e530fb7f0845f42de1f02e4375b704002cefc4b34d@ec2-3-224-97-209.compute-1.amazonaws.com:5432/d9lplpfhur53rq'
+app.config['SQLALCHEMY_DATABASE_URI']='postgres://vsaykqnctpdole:5deaa00920aa7874264c87e530fb7f0845f42de1f02e4375b704002cefc4b34d@ec2-3-224-97-209.compute-1.amazonaws.com:5432/d9lplpfhur53rq'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 
 db=SQLAlchemy(app)
