@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Favorite Quotes</title>
+    </head>
+    <body>
+        <nav style="margin-top:25px;margin-left:45px">
+            <a class="btn btn-primary" href="{{ url_for('quotes') }}">Add a quote</a>
+        </nav>
+        <!-- Above creates a button and clicking it leads to quotes,html page-->
+        <br>
+
+        <div class="container theme-showcase" role="main">
+            <div style="color:blue; background-color:orange", class="jumbotron">
+                <h1>Favorite Quotes</h1>
+            </div>
+        
+            <!--following need to be run in a loop to repeat for all quotes in database-->
+            {% for r in result %}
+            <div style="color:wheat; background-color:blue">
+                <h1>{{ r.author }}</h1>
+            </div>
+        
+            <div style="color:wheat; background-color:turquoise; font-size:28px">
+                <h1>{{ r.quote }}</h1>
+            </div>
+            {% endfor %}
+        </div>
+        <!--{% if quote %}
+        <h2>{{quote}}</h2>
+        {% else %}
+        <h2>No variable quote here</h2>
+        {% endif %}-->
+    </body>
+</html>
